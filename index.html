@@ -1,0 +1,109 @@
+---
+layout: default
+---
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-eyebrow">{{ site.hero.eyebrow }}</div>
+  <h1 class="hero-title">
+    {{ site.hero.line1 }}<br>
+    {{ site.hero.line2 }}<br>
+    <em>{{ site.hero.line3 }}</em>
+  </h1>
+  <p class="hero-sub">{{ site.hero.subtitle }}</p>
+  <div class="hero-actions">
+    <a href="{{ site.readme_url }}" class="btn-primary">Get started →</a>
+    <a href="{{ site.github_repo }}" class="btn-secondary">View on GitHub</a>
+  </div>
+  <div class="hero-badges">
+    {% for badge in site.hero.badges %}
+    <div class="badge"><div class="badge-dot"></div>{{ badge }}</div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ── PROBLEM ── -->
+<section class="problem">
+  <div class="section-inner">
+    <div>
+      <div class="problem-label reveal">{{ site.problem.label }}</div>
+      <h2 class="problem-title reveal">
+        {{ site.problem.title_start }} <em>{{ site.problem.title_em }}</em> {{ site.problem.title_end }}
+      </h2>
+    </div>
+    <div class="problem-points">
+      {% for point in site.problem.points %}
+      <div class="problem-point reveal">
+        <strong>{{ point.heading }}</strong>
+        <p>{{ point.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT CHABO IS ── -->
+<section class="components" id="what">
+  <div class="section-inner">
+    <div class="components-label reveal">{{ site.components.label }}</div>
+    <h2 class="components-title reveal">{{ site.components.title }}</h2>
+    <p class="components-subtitle reveal">{{ site.components.subtitle }}</p>
+    <div class="components-grid">
+      {% for item in site.components.items %}
+      <div class="component-card reveal">
+        <div class="component-icon">{{ item.icon }}</div>
+        <div class="component-status {% if item.status contains 'Coming' %}status-coming{% else %}status-live{% endif %}">
+          {{ item.status }}
+        </div>
+        <div class="component-title">{{ item.title }}</div>
+        <p class="component-desc">{{ item.desc }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CHABO ── -->
+<section class="features" id="features">
+  <div class="section-inner">
+    <div class="features-label reveal">{{ site.features.label }}</div>
+    <h2 class="features-title reveal">{{ site.features.title }}</h2>
+    <div class="features-grid reveal">
+      {% for item in site.features.items %}
+      <div class="feature-card">
+        <div class="feature-icon">{{ item.icon }}</div>
+        <div class="feature-name">{{ item.title }}</div>
+        <p class="feature-desc">{{ item.desc }}</p>
+        <span class="feature-jargon">{{ item.jargon }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── STACK ── -->
+<section class="stack">
+  <div class="section-inner">
+    <span class="stack-label">{{ site.stack.label }}</span>
+    <div class="stack-divider"></div>
+    <div class="stack-items">
+      {% for item in site.stack.items %}
+      <div class="stack-item"><div class="stack-item-dot"></div>{{ item }}</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta">
+  <div class="cta-bg"></div>
+  <div class="cta-label reveal">{{ site.cta.label }}</div>
+  <h2 class="cta-title reveal">{{ site.cta.title_start }} <em>{{ site.cta.title_em }}</em></h2>
+  <p class="cta-sub reveal">{{ site.cta.subtitle }}</p>
+  <div class="cta-actions reveal">
+    <a href="{{ site.readme_url }}" class="btn-primary">Read the docs →</a>
+    <a href="{{ site.github_repo }}" class="btn-secondary">Star on GitHub ☆</a>
+  </div>
+</section>
